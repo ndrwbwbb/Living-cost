@@ -14,7 +14,7 @@ st.write("Let's display my dataset:")
 st.dataframe(df_glance)
 st.write("Seems like we have some extra data and unreadable names of columns,"
          " that's why we are to shorten our range of data, basing on our hypothesis, which gonna be stated later and rename our columns:")
-df = pd.read_csv('/Users/andreybobua/PycharmProjects/cost-of-living_v2.csv')
+df = pd.read_csv('cost-of-living_v2.csv')
 df = df[["city", "country", "x1", "x3", "x4", "x5", "x7", "x9", "x10", "x12", "x16", "x20", "x23", "x25", "x26","x27", "x38", "x44", "x46", "x49", "x54"]]
 df.rename(columns = {"x1": "cheap_rest", "x3": "mcdonalds", "x4": "domestic_beer_rest", "x5": "imported_beer_rest",
                      "x25": "domestic_beer_market", "x26": "imported_beer_market", "x7": "coke",
