@@ -60,7 +60,7 @@ df_temp = df_temp.dropna(subset = ["water"])
 fig1 = px.histogram(df_temp.groupby(["country"]).mean().reset_index(), range_y = [0, df['water'].max() + 1], x = "country", y="water",
                    title="Average water prices in the world", color_discrete_sequence=["aqua"])
 fig1.add_scatter(x = ["Afghanistan", "Yemen"], y=[df['water'].median(), df['water'].median()], mode='lines', name='Median Line')
-fig1.update_layout(template="plotly_dark", width=1000, height=600)
+fig1.update_layout(template="plotly_dark", width=700, height=600)
 st.plotly_chart(fig1)
 st.write('''<p>I came to conclusion that<strong>the highest prices</strong> on the main basic products like milk, eggs and others <br>
             are mainly met in Oceania and the countries in area of North America:</p>''', unsafe_allow_html=True)
@@ -81,7 +81,7 @@ st.subheader("Then I had a hypothesis that in the United States McDonald's price
 df_temp2 = df[["country", "mcdonalds"]]
 fig2 = px.choropleth(df_temp2.groupby(["country"]).mean().reset_index(), locations="country", color="mcdonalds", hover_name="country",
                      projection="natural earth", locationmode="country names", color_continuous_scale=px.colors.sequential.Plasma)
-fig2.update_layout(template="plotly_dark", width=1000, height=600)
+fig2.update_layout(template="plotly_dark", width=700, height=600)
 st.plotly_chart(fig2)
 st.write("____________________________________________________________________________________")
 st.subheader("After that I wanted to compare prices of beer from different places: a market and a restaurant. I made this ccomparsion using two-lined histogram. Now I'll provide one example:")
@@ -96,7 +96,7 @@ fig3 = px.bar(df_temp3.groupby(["country"]).mean().reset_index(),
              title='Average domestic beer prices in the world (part 2)',
              color_discrete_map={'domestic_beer_market': '#fbb117', 'domestic_beer_rest': '#fce6cc'},
              barmode='group')
-fig3.update_layout(template="plotly_dark", width=1100, height=600)
+fig3.update_layout(template="plotly_dark", width=700, height=600)
 fig3.add_scatter(x = ["Libya", "Zimbabwe"], y=[df_temp3['domestic_beer_market'].median(), df_temp3['domestic_beer_market'].median()], mode='lines', name='Median price of domestic beer from markets')
 fig3.add_scatter(x = ["Libya", "Zimbabwe"], y=[df_temp3['domestic_beer_rest'].median(), df_temp3['domestic_beer_rest'].median()], mode='lines', name='Median price of domestic beer from restaurants')
 st.plotly_chart(fig3)
@@ -118,5 +118,5 @@ fig4.add_trace(go.Pie(values=[6, 439, 34, 4, 43, 60], labels = names, textinfo='
 fig4.add_trace(go.Pie(values=[10, 267, 9, 3, 84, 100], labels = names, textinfo='label+value'), row=3, col=1)
 fig4.add_trace(go.Pie(values=[17, 1233, 69, 8, 45, 78], labels = names, textinfo='label+value'), row=3, col=2)
 
-fig4.update_layout(template="plotly_dark", width=1100, height=1000)
+fig4.update_layout(template="plotly_dark", width=700, height=1000)
 st.plotly_chart(fig4)
