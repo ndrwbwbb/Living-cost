@@ -81,7 +81,7 @@ st.subheader("Then I had a hypothesis that in the United States McDonald's price
 df_temp2 = df[["country", "mcdonalds"]]
 fig2 = px.choropleth(df_temp2.groupby(["country"]).mean().reset_index(), locations="country", color="mcdonalds", hover_name="country",
                      projection="natural earth", locationmode="country names", color_continuous_scale=px.colors.sequential.Plasma)
-fig2.update_layout(template="plotly_dark", width=700, height=500)
+fig2.update_layout(template="plotly_dark", width=700, height=600)
 st.plotly_chart(fig2)
 st.write("____________________________________________________________________________________")
 st.subheader("After that I wanted to compare prices of beer from different places: a market and a restaurant. I made this ccomparsion using two-lined histogram. Now I'll provide one example:")
