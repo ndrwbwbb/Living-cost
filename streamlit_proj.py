@@ -100,8 +100,8 @@ fig3 = px.bar(df_temp3.groupby(["country"]).mean().reset_index(),
              color_discrete_map={'domestic_beer_market': '#fbb117', 'domestic_beer_rest': '#fce6cc'},
              barmode='group')
 fig3.update_layout(template="plotly_dark", width=700, height=600)
-fig3.add_scatter(x = ["Libya", "Zimbabwe"], y=[df_temp3['domestic_beer_market'].median(), df_temp3['domestic_beer_market'].median()], mode='lines', name='Median price of domestic beer from markets')
-fig3.add_scatter(x = ["Libya", "Zimbabwe"], y=[df_temp3['domestic_beer_rest'].median(), df_temp3['domestic_beer_rest'].median()], mode='lines', name='Median price of domestic beer from restaurants')
+fig3.add_scatter(x = ["Andorra", "Bermuda"], y=[df_temp3['domestic_beer_market'].median(), df_temp3['domestic_beer_market'].median()], mode='lines', name='Median price of domestic beer from markets')
+fig3.add_scatter(x = ["Andorra", "Bermuda"], y=[df_temp3['domestic_beer_rest'].median(), df_temp3['domestic_beer_rest'].median()], mode='lines', name='Median price of domestic beer from restaurants')
 st.plotly_chart(fig3)
 st.write("____________________________________________________________________________________")
 st.subheader("And by the end of my analysis I compared prices on different things in 6 countries from different parts of the world using 'make_subplots' and 'go.Pie'")
