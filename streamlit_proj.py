@@ -12,6 +12,7 @@ st.title("Living cost comparsion")
 st.subheader("This dashboard will present the information about different living costs all over the world.")
 st.write("Let's display my dataset:")
 st.dataframe(df_glance)
+st.write("Link on this dataset% https://www.kaggle.com/datasets/mvieira101/global-cost-of-living?select=cost-of-living_v2.csv")
 st.write("Seems like we have some extra data and unreadable names of columns,"
          " that's why we are to shorten our range of data, basing on our hypothesis, which gonna be stated later and rename our columns:")
 df = pd.read_csv('cost-of-living_v2.csv')
