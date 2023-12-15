@@ -89,7 +89,8 @@ st.write("______________________________________________________________________
 st.subheader("After that I wanted to compare prices of beer from different places: a market and a restaurant. I made this ccomparsion using two-lined histogram. Now I'll provide one example:")
 df_temp3 = df[["country", "domestic_beer_market", "domestic_beer_rest"]]
 df_temp3 = df_temp3.dropna(subset = ["domestic_beer_market", "domestic_beer_rest"])
-df_temp3 = df_temp3[(df_temp3['country'] >= 'Libya')]
+df_temp3 = df_temp3[(df_temp3['country'] >= 'Andorra') & (df_temp3['country'] <= 'Bermuda')]
+# df_temp3 = df_temp3[(df_temp3['country'] >= 'Libya')]
 
 fig3 = px.bar(df_temp3.groupby(["country"]).mean().reset_index(),
              x='country',
