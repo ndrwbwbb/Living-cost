@@ -4,7 +4,7 @@ import plotly.express as px
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-df_glance = pd.read_csv('/Users/andreybobua/PycharmProjects/cost-of-living_v2.csv')
+df_glance = pd.read_csv('cost-of-living_v2.csv')
 
 st.set_page_config(page_title="My Webpage", page_icon=":tada")
 
